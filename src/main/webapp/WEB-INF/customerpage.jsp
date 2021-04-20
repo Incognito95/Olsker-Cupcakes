@@ -2,6 +2,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <t:genericpage>
     <jsp:attribute name="header">
          Demo Page for Customer Roles
@@ -13,7 +14,44 @@
         <h1>Hello ${sessionScope.email} </h1>
         You are now logged in as a Customer of our wonderful site.
         Role: ${sessionScope.role}
-    </jsp:body>
 
+        <h3 class="mt-3">Bottoms</h3>
+        <table class="table table-striped">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+        </thead>
+        <c:forEach var="bottoms" items="${applicationScope.bottoms}">
+        <tr>
+            <td>${bottoms.bottom_id}</td>
+            <td>${bottoms.name}</td>
+            <td>${bottoms.price}</td>
+        </tr>
+        </c:forEach>
+        </table>
+
+
+        <h3 class="mt-5">Toppings</h3>
+        <table class="table mt-3 table-striped">
+            <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            </thead>
+            <c:forEach var="toppings" items="${applicationScope.toppings}">
+                <tr>
+                    <td>${toppings.topping_id}</td>
+                    <td>${toppings.name}</td>
+                    <td>${toppings.price}</td>
+                </tr>
+            </c:forEach>
+        </table>
+
+
+
+
+
+    </jsp:body>
 </t:genericpage>
 

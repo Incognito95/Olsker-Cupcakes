@@ -14,12 +14,12 @@
 
     <jsp:body>
 
-        <div>
-            <h2>Our Cool Site</h2>
 
-            <div style="margin-top: 3em;margin-bottom: 3em;">
-                Main page for this 2. semester start project used at cphbusiness.dk
-            </div>
+
+    <h1>This is the home page!</h1>
+
+
+
 
             <c:if test="${sessionScope.role == 'employee' }">
                 <p style="font-size: larger">This is what you can do,

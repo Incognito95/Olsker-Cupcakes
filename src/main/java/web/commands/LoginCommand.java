@@ -38,6 +38,7 @@ public class LoginCommand extends CommandUnprotectedPage
         }
         catch (UserException ex)
         {
+            ex.printStackTrace();
             request.setAttribute("error", "Wrong username or password!");
             return "loginpage";
         }

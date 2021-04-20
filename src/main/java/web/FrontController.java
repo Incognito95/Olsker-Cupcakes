@@ -1,11 +1,14 @@
 package web;
 
 import business.exceptions.UserException;
+import business.persistence.BottomMapper;
 import business.persistence.Database;
+import business.persistence.ToppingMapper;
 import web.commands.*;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -17,9 +20,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "FrontController", urlPatterns = {"/fc/*"})
 public class FrontController extends HttpServlet
 {
-    private final static String USER = "dev";
-    private final static String PASSWORD = "ax2";
-    private final static String URL = "jdbc:mysql://localhost:3306/startcode?serverTimezone=CET";
+    private final static String USER = "root";
+    private final static String PASSWORD = "root1995";
+    private final static String URL = "jdbc:mysql://localhost:3306/cupcake?serverTimezone=CET";
 
     public static Database database;
 
@@ -39,6 +42,25 @@ public class FrontController extends HttpServlet
         }
 
         // Initialize whatever global datastructures needed here:
+
+        BottomMapper bottomMapper = new BottomMapper(database);
+        try {
+            getServletContext().setAttribute("bottoms", bottomMapper.showBottoms());
+        } catch (UserException e) {
+            e.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        ToppingMapper toppingMapper = new ToppingMapper(database);
+        try {
+            getServletContext().setAttribute("toppings", toppingMapper.showToppings());
+        } catch (UserException e) {
+            e.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
 
     }
 
