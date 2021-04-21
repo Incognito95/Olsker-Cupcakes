@@ -16,7 +16,7 @@
             <br>
         <a href="viewallorders" type="button" class="btn btn-primary btn-lg">View all orders</a>
             <br>
-        <a href="" type="button" class="btn btn-primary btn-lg ms-5">View all customers</a>
+        <a href="viewallcustomers" type="button" class="btn btn-primary btn-lg ms-5">View all customers</a>
             <br>
         </div>
     </jsp:body>
