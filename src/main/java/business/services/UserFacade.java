@@ -26,4 +26,10 @@ public class UserFacade
         return user;
     }
 
+    public User updateSettings(String email, String password) throws UserException
+    {
+        User user = new User(email, password, "employee");
+        userMapper.updateSettings(user);
+        return user;
+    }
 }

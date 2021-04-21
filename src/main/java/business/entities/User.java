@@ -14,6 +14,7 @@ public class User
     private String email;
     private String password; // Should be hashed and secured
     private String role;
+    private String credit;
 
     public String getEmail()
     {
@@ -53,6 +54,16 @@ public class User
     public void setId(int id)
     {
         this.id = id;
+    }
+
+    public String getCredit()
+    {
+        return credit;
+    }
+
+    public void setCredit(String credit)
+    {
+        this.credit = credit;
     }
 
 }
