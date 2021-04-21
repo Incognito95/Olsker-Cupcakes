@@ -31,5 +31,14 @@
       </c:forEach>
     </table>
 
+
+    <div class="d-flex justify-content-center mt-5">
+      <br>
+      <a href="viewallorders" type="button" class="btn btn-primary btn-lg">edit</a> // not done yet.
+      <br>
+      <a href="employeepage" type="button" class="btn btn-primary btn-lg ms-5">back</a>
+      <br>
+    </div>
+
   </jsp:body>
 </t:genericpage>
