@@ -9,28 +9,24 @@
     <jsp:attribute name="footer">
     </jsp:attribute>
     <jsp:body>
-        <div style="margin-top: 5em;">
-            <form name="login" action="${pageContext.request.contextPath}/fc/registercommand" method="POST">
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="email">Email</label>
-                    <div class="col-sm-4">
-                        <input id="email" class="form-control" type="text" name="email" value="${param.email}" placeholder="Enter a valid email">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="password1">Password</label>
-                    <div class="col-sm-4">
-                        <input id="password1" class="form-control" type="password" name="password1"  value="${param.password1}"  placeholder="Enter your password">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="password2">Password</label>
-                    <div class="col-sm-4">
-                        <input id="password2" class="form-control" type="password" name="password2" value="${param.password2}"  placeholder="Repeat the password">
-                    </div>
-                </div>
 
-                <input class="btn btn-primary" type="submit" type="submit" value="Submit">
+
+
+
+        <main class="form-signin">
+
+            <h1 class="text-center fw-bold">Sign Up</h1>
+
+            <form class="mt-5" name="login" action="${pageContext.request.contextPath}/fc/registercommand" method="POST">
+
+                <input type="email" class="form-control mt-2" name="email" value="${param.email}" placeholder="Enter email">
+                <input type="password" class="form-control mt-3" name="password1"  value="${param.password1}" placeholder="Enter password">
+                <input type="password" class="form-control mt-3" type="password" name="password2" value="${param.password2}" placeholder="Repeat password">
+
+                <button class="w-100 btn btn-lg mt-3 btn-login text-white" type="submit">Sign Up</button>
+
+                <p class="link-secondary mt-3 text-center">Already have an account? <a href="#" class="mt-3 text-dark fw-bold" style="text-decoration: none;">Sign In</a></p>
+
             </form>
 
             <c:if test="${requestScope.error != null }">
@@ -38,7 +34,9 @@
                         ${requestScope.error}
                 </p>
             </c:if>
-        </div>
+
+        </main>
+
     </jsp:body>
 </t:genericpage>
 

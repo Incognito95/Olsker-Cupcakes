@@ -49,6 +49,9 @@
         <a class="p-2 text-dark" href="#">Orders</a>
         <a class="p-2 text-dark" href="#">Profile</a>
         <a class="p-2 text-dark" href="#">About</a>
+        <a class="p-2 text-dark" href="#">Login</a>
+        /
+        <a class="p-2 text-dark" href="#">Create Account</a>
     </nav>
 
     <div>
