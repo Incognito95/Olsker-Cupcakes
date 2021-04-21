@@ -12,5 +12,12 @@
         <h1>Hello ${sessionScope.email} </h1>
         You are now logged in as a EMPLOYEE of our wonderful site.
 
+        <div class="d-flex justify-content-center mt-2">
+            <br>
+        <a href="" type="button" class="btn btn-primary btn-lg">View all orders</a>
+            <br>
+        <a href="" type="button" class="btn btn-primary btn-lg">View all customers</a>
+            <br>
+        </div>
     </jsp:body>
 </t:genericpage>
