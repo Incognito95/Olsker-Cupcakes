@@ -18,9 +18,9 @@
         <br>
         <a href="placeorder" type="button" class="btn btn-primary btn-lg mt-2">Place order</a>
         <br>
-        <button type="button" class="btn btn-primary btn-lg mt-2">View Order</button>
+        <button type="button" class="btn btn-primary btn-lg mt-2">View order</button>
         <br>
-        <button type="button" class="btn btn-primary btn-lg mt-2">Settings</button>
+        <button type="button" class="btn btn-primary btn-lg mt-2">view settings</button>
 
         <h3 class="mt-3">Bottoms</h3>
         <table class="table table-striped">
