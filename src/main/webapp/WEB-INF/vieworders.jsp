@@ -5,13 +5,13 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Demo Page for Employee view all orders
+         Demo Page for customers to view their orders
     </jsp:attribute>
     <jsp:attribute name="footer">
     </jsp:attribute>
     <jsp:body>
         <h1>Hello ${sessionScope.email} </h1>
-        view all orders:
+        view your orders:
 
         <h3 class="mt-3">Orders</h3>
         <table class="table table-striped">
@@ -34,9 +34,9 @@
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="viewallorders" type="button" class="btn btn-primary btn-lg">edit</a>
+            <a href="vieworders" type="button" class="btn btn-primary btn-lg">edit</a>
             <br>
-            <a href="employeepage" type="button" class="btn btn-primary btn-lg ms-5">back</a>
+            <a href="customerpage" type="button" class="btn btn-primary btn-lg ms-5">back</a>
             <br>
         </div>
 
