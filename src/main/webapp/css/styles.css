@@ -32,3 +32,19 @@
 .form-control {
     background-color: #F5F6FA;
 }
+
+/* ------ order confirmation ----- */
+.order-confirmation-paragraph,.order-confirmation-title{
+    color: #777777;
+    font-family: Segoe UI;
+}
+
+.order-confirmation-background {
+    background-color: #8FDB9C;
+}
+
+.order-confirmation-border{
+    border-style: solid;
+    height: 100px;
+    border: 2px #707070;
+}
