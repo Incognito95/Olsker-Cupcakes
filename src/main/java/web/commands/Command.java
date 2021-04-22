@@ -33,6 +33,8 @@ public abstract class Command
         commands.put("placeorder", new AddOrderPageCommand("placeorder","customer"));
         commands.put("yourcart", new YourCartCommand("yourcart", "customer"));
 
+        commands.put("viewallorders", new CommandProtectedPage("viewallorders", "employee"));
+        commands.put("viewallcustomers", new CommandProtectedPage("viewallcustomers", "employee"));
 
     }
 

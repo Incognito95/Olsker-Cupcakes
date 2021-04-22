@@ -22,6 +22,7 @@ public class FrontController extends HttpServlet
 {
     private final static String USER = "root";
     private final static String PASSWORD = "Qqnfyeiy1997";
+    private final static String PASSWORD = "";
     private final static String URL = "jdbc:mysql://localhost:3306/cupcake?serverTimezone=CET";
 
     public static Database database;
