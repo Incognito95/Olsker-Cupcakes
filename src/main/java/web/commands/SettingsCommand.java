@@ -30,7 +30,7 @@ public class SettingsCommand extends CommandProtectedPage
 
             return "settings";
         }
-        return User;
+        return null;
     }
 
 }
