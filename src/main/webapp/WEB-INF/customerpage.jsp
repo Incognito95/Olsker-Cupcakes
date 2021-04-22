@@ -20,7 +20,7 @@
         <br>
         <button type="button" class="btn btn-primary btn-lg mt-2">View order</button>
         <br>
-        <button type="button" class="btn btn-primary btn-lg mt-2">view settings</button>
+        <a href="settings" type="button" class="btn btn-primary btn-lg mt-2">view settings</a>
 
         <h3 class="mt-3">Bottoms</h3>
         <table class="table table-striped">

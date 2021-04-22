@@ -20,7 +20,7 @@ public class SettingsCommand extends CommandProtectedPage
 
     private UserFacade userFacade;
 
-    @Override
+   /* @Override
     public String execute(HttpServletRequest request, HttpServletResponse response)
     {
         String deleteId = request.getParameter("delete");
@@ -30,7 +30,9 @@ public class SettingsCommand extends CommandProtectedPage
 
             return "settings";
         }
-        return User;
+         return null;
     }
+
+    */
 
 }
