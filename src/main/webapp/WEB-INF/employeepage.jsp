@@ -4,7 +4,7 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Demo Page for Employee Roles
+         Demo Page for Employee page
     </jsp:attribute>
     <jsp:attribute name="footer">
     </jsp:attribute>
@@ -13,12 +13,11 @@
         You are now logged in as a EMPLOYEE of our wonderful site.
 
 
-
         <div class="d-flex justify-content-center mt-5">
             <br>
-        <a href="viewallorders" type="button" class="btn btn-primary btn-lg">View all orders</a>
+            <a href="viewallorders" type="button" class="btn btn-primary btn-lg">View all orders</a>
             <br>
-        <a href="viewallcustomers" type="button" class="btn btn-primary btn-lg ms-5">View all customers</a>
+            <a href="viewallcustomers" type="button" class="btn btn-primary btn-lg ms-5">View all customers</a>
             <br>
         </div>
     </jsp:body>

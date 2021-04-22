@@ -5,7 +5,7 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Demo Page for Customer Roles
+         Demo Page for Customer page
     </jsp:attribute>
     <jsp:attribute name="footer">
     </jsp:attribute>
@@ -24,18 +24,18 @@
 
         <h3 class="mt-3">Bottoms</h3>
         <table class="table table-striped">
-        <thead>
+            <thead>
             <th>Id</th>
             <th>Name</th>
             <th>Price</th>
-        </thead>
-        <c:forEach var="bottoms" items="${applicationScope.bottoms}">
-        <tr>
-            <td>${bottoms.bottom_id}</td>
-            <td>${bottoms.name}</td>
-            <td>${bottoms.price}</td>
-        </tr>
-        </c:forEach>
+            </thead>
+            <c:forEach var="bottoms" items="${applicationScope.bottoms}">
+                <tr>
+                    <td>${bottoms.bottom_id}</td>
+                    <td>${bottoms.name}</td>
+                    <td>${bottoms.price}</td>
+                </tr>
+            </c:forEach>
         </table>
 
 
@@ -54,9 +54,6 @@
                 </tr>
             </c:forEach>
         </table>
-
-
-
 
 
     </jsp:body>
