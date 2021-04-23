@@ -33,7 +33,7 @@
         <br>
         <a href="" type="button" class="btn btn-primary btn-lg">Add to basket</a>
         <br>
-        <a href="" type="button" class="btn btn-success btn-lg ms-5">Go to payment</a>
+        <a href="checkout" type="button" class="btn btn-success btn-lg ms-5">Go to payment</a>
         </div>
 
         <div class="d-flex justify-content-center mt-5">

@@ -14,7 +14,7 @@
 
     <jsp:body>
 
-        <h3 class="mt-3">Your Cart:</h3>
+        <h3 class="mt-3">Edit Your Cart:</h3>
         <table class="table table-striped">
             <thead>
             <th>Id</th>
@@ -28,14 +28,9 @@
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="checkout" type="button" class="btn btn-success btn-lg">Procced</a>
+            <a href="yourcart" type="button" class="btn btn-success btn-lg">Confirm</a>
             <br>
-            <a href="editcart" type="button" class="btn btn-danger btn-lg ms-5">Edit</a>
-        </div>
-
-        <div class="d-flex justify-content-center mt-5">
-            <br>
-            <a href="placeorder" type="button" class="btn btn-danger btn-lg">Cancel</a>
+            <a href="yourcart" type="button" class="btn btn-danger btn-lg ms-5">Cancel</a>
         </div>
 
 

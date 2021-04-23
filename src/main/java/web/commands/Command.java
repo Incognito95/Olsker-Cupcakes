@@ -32,9 +32,11 @@ public abstract class Command
         commands.put("settings", new SettingsCommand("settings", "customer"));
         commands.put("placeorder", new AddOrderPageCommand("placeorder","customer"));
         commands.put("yourcart", new YourCartCommand("yourcart", "customer"));
-
+        commands.put("editcart", new YourCartCommand("editcart", "customer"));
         commands.put("viewallorders", new CommandProtectedPage("viewallorders", "employee"));
         commands.put("viewallcustomers", new CommandProtectedPage("viewallcustomers", "employee"));
+        commands.put("orderconfirmation", new OrderConfirmation("orderconfirmation", "customer"));
+        commands.put("checkout", new YourCartCommand("checkout", "customer"));
 
     }
 
