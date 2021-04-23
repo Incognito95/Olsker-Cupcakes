@@ -59,23 +59,18 @@ public class UserMapper {
         }
     }
 
-    public User updateSettings(String email, String password) throws UserException {
+    public User updateSettings(String email, String password, User oldUser) throws UserException {
         try (Connection connection = database.connect()) {
-            String sql = "UPDATE users SET user_email = ?, user_password = ?, user_role = ? WHERE user_id = ?";
+            String sql = "UPDATE users SET user_email = ?, user_password = ? WHERE user_id = ?";
 
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ps.setString(1, email);
                 ps.setString(2, password);
-                ResultSet rs = ps.executeQuery();
-                if (rs.next()) {
-                    String role = rs.getString("user_role");
-                    int id = rs.getInt("user_id");
-                    User user = new User(email, password, role);
-                    user.setId(id);
-                    return user;
-                } else {
-                    throw new UserException("Could not validate user");
-                }
+                ps.setInt(3, oldUser.getId());
+                int rs = ps.executeUpdate();
+                oldUser.setEmail(email);
+                oldUser.setPassword(password);
+                return oldUser;
             } catch (SQLException ex) {
                 throw new UserException(ex.getMessage());
             }
@@ -83,8 +78,6 @@ public class UserMapper {
             throw new UserException("Connection to database could not be established");
         }
     }
-
-
 
 }
 

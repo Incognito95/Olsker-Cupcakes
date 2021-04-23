@@ -24,25 +24,29 @@ public class SettingsCommand extends CommandProtectedPage
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
     {
-        String email = request.getParameter("user_email");
-        String password = request.getParameter("user_password");
+        HttpSession session = request.getSession();
 
-        try {
-            User user = userFacade.updateSettings(email, password);
+        String newEmail = request.getParameter("user_email");
+        String newPassword = request.getParameter("user_password");
 
-            HttpSession session = request.getSession();
+        User oldUser = (User) session.getAttribute("user");
 
-            session.setAttribute("user", user);
-            session.setAttribute("role", user.getRole());
-            session.setAttribute("email", email);
+        if (newEmail != null) {
 
-            String pageToShow =  user.getRole() + "page";
-            return REDIRECT_INDICATOR + pageToShow;
-        }
-        catch (UserException ex)
-        {
-            ex.printStackTrace();
-            request.setAttribute("success", "Your profile settings are changed!");
+            try {
+                User updatedUser = userFacade.updateSettings(newEmail, newPassword, oldUser);
+
+                session.setAttribute("user", updatedUser);
+                session.setAttribute("email", newEmail);
+
+                String pageToShow = updatedUser.getRole() + "page";
+                return REDIRECT_INDICATOR + pageToShow;
+            } catch (UserException ex) {
+                ex.printStackTrace();
+                request.setAttribute("success", "Your profile settings are changed!");
+                return "settings";
+            }
+        } else {
             return "settings";
         }
     }
