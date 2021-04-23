@@ -23,8 +23,6 @@ public class SettingsCommand extends CommandProtectedPage
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
-   /* @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response)
     {
         String email = request.getParameter("user_email");
         String password = request.getParameter("user_password");
@@ -47,11 +45,5 @@ public class SettingsCommand extends CommandProtectedPage
             request.setAttribute("success", "Your profile settings are changed!");
             return "settings";
         }
-        return null;
     }
-         return null;
-    }
-
-    */
-
 }

@@ -39,18 +39,18 @@
             <c:choose>
                 <c:when test="${sessionScope.user != null }">
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/profile">Profile</a></li>
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/customerpage">Profile</a></li>
                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/viewallorders">View All Orders</a></li>
                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/placeorder">View All Customers</a></li>
                 </ul>
                 </c:when>
                 <c:otherwise>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/profile">Profile</a></li>
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/customerpage">Profile</a></li>
                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/viewallorders">View Orders</a></li>
                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/placeorder">Place Order</a></li>
-                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/changedata">Change Data</a></li>
-                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/">FAQ</a></li>
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/settings">Change Data</a></li>
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/about">FAQ</a></li>
                 </ul>
                 </c:otherwise>
             </c:choose>
@@ -82,15 +82,6 @@
     </c:choose>
 
 
-
-    <nav class="my-2 my-md-0 me-md-3">
-        <a class="p-2 text-dark" href="#">Orders</a>
-        <a class="p-2 text-dark" href="#">Profile</a>
-        <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/about">About</a>
-        <a class="p-2 text-dark" href="#">Login</a>
-        /
-        <a class="p-2 text-dark" href="#">Create Account</a>
-    </nav>
 
     <div>
 
