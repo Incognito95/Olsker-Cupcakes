@@ -11,33 +11,35 @@
     </jsp:attribute>
 
     <jsp:body>
-        <div style="margin-top: 5em;" class="container">
-            <form name="login" action="${pageContext.request.contextPath}/fc/logincommand"  method="POST">
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label">Email</label>
-                    <div class="col-sm-4">
-                        <input class="form-control" type="text" name="email" placeholder="someone@nowhere.com">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label">Password</label>
-                    <div class="col-sm-4">
-                        <input class="form-control" type="password" name="password" placeholder="sesam">
-                    </div>
-                </div>
-                <c:if test="${requestScope.error != null }">
-                    <p style="color:red">
-                            ${requestScope.error}
-                    </p>
-                </c:if>
 
-                <c:if test="${not empty param.msg}">
-                    <p style="font-size: large">${param.msg}</p>
-                </c:if>
-                <button class="btn btn-primary" type="submit" value="Login">Sign in</button>
+        <main class="form-login">
+
+            <h1 class="text-center fw-bold">Login</h1>
+
+            <form class="mt-5" name="login" action="${pageContext.request.contextPath}/fc/logincommand" method="POST">
+
+                <input type="email" class="form-control mt-2" name="email" value="${param.email}" placeholder="Enter email">
+                <input type="password" class="form-control mt-3" name="password"  value="${param.password1}" placeholder="Enter password">
+
+                <button class="w-100 btn btn-lg mt-3 btn-login text-white" type="submit">Login</button>
+
+                <p class="link-secondary mt-3 text-center">Don't have an account? <a href="${pageContext.request.contextPath}/fc/registerpage" class="mt-3 text-dark fw-bold" style="text-decoration: none;">Sign Up</a></p>
+
             </form>
 
+            <c:if test="${requestScope.error != null }">
+                <p style="color:red">
+                        ${requestScope.error}
+                </p>
+            </c:if>
 
-        </div>
+        </main>
+
+
+
+
+
+
+
     </jsp:body>
 </t:genericpage>

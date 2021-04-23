@@ -20,17 +20,30 @@ public class SettingsCommand extends CommandProtectedPage
 
     private UserFacade userFacade;
 
+
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response)
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
     {
-        String deleteId = request.getParameter("delete");
-        String updateId = request.getParameter("update");
+        String email = request.getParameter("user_email");
+        String password = request.getParameter("user_password");
 
-        if (updateId != null) {
+        try {
+            User user = userFacade.updateSettings(email, password);
 
+            HttpSession session = request.getSession();
+
+            session.setAttribute("user", user);
+            session.setAttribute("role", user.getRole());
+            session.setAttribute("email", email);
+
+            String pageToShow =  user.getRole() + "page";
+            return REDIRECT_INDICATOR + pageToShow;
+        }
+        catch (UserException ex)
+        {
+            ex.printStackTrace();
+            request.setAttribute("success", "Your profile settings are changed!");
             return "settings";
         }
-        return User;
     }
-
 }

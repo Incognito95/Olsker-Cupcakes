@@ -32,7 +32,7 @@ public class UserFacade
     public User updateSettings(String email, String password) throws UserException
     {
         User user = new User(email, password, "employee");
-        userMapper.updateSettings(user);
+        userMapper.updateSettings(email, password);
         return user;
     }
     public Orders addToCart(String name, int quantity, int sub_total, int id) throws UserException

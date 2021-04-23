@@ -15,21 +15,18 @@
 
         <main class="form-signin">
 
-            <h1 class="text-center fw-bold">Settings</h1>
+            <h1 class="text-center fw-bold">Change Data</h1>
 
-            <form class="mt-5" name="login" action="${pageContext.request.contextPath}/fc/settingscommand" method="POST">
+            <form class="mt-5" name="settings" action="${pageContext.request.contextPath}/fc/settingscommand" method="POST">
 
                 <label>Email</label>
-                <input type="email" class="form-control mt-2" name="text" value="${param.email}">
+                <input type="email" class="form-control mt-2" name="user_email" value="${param.email}">
 
                 <label class="mt-3">Password</label>
-                <input type="text" class="form-control mt-2" name="text"  value="${param.password1}">
+                <input type="text" class="form-control mt-2" name="user_password"  value="${param.password}">
 
                 <label class="mt-3">Role</label>
-                <input type="role" class="form-control mt-2" type="text" name="role" value="${param.role}">
-
-                <label class="mt-3">Credit</label>
-                <input type="credit" class="form-control mt-2" type="credit" name="credit" value="${param.credit}">
+                <input type="text" class="form-control mt-2" name="user_role" value="${param.role}">
 
                 <button type="submit" name="update" value="${param.user_id}" class="btn btn-success mt-3">Change</button>
 

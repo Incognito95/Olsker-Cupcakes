@@ -31,28 +31,58 @@
     <div class="h5 my-0 me-md-auto fw-normal">
 
         <!-- dropdown start -->
-        <div class="btn-group mb-3">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                Action
+        <div class="dropdown mb-3">
+            <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="${pageContext.request.contextPath}/images/burger-icon.png">
             </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="settings">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
-        </div> <!-- dropdown ending -->
+
+            <c:choose>
+                <c:when test="${sessionScope.user != null }">
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/profile">Profile</a></li>
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/viewallorders">View All Orders</a></li>
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/placeorder">View All Customers</a></li>
+                </ul>
+                </c:when>
+                <c:otherwise>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/profile">Profile</a></li>
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/viewallorders">View Orders</a></li>
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/placeorder">Place Order</a></li>
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/changedata">Change Data</a></li>
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/">FAQ</a></li>
+                </ul>
+                </c:otherwise>
+            </c:choose>
+        </div>
+        <!-- dropdown ending -->
 
     </div>
-    <nav class="my-2 my-md-0 me-md-3">
-        <a class="p-2 text-dark" href="#">Orders</a>
-        <a class="p-2 text-dark" href="#">Profile</a>
-        <a class="p-2 text-dark" href="#">About</a>
-        <a class="p-2 text-dark" href="#">Login</a>
-        /
-        <a class="p-2 text-dark" href="#">Create Account</a>
-    </nav>
+
+
+    <c:choose>
+        <c:when test="${sessionScope.user != null }">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/viewallorders">View All Orders</a>
+                <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/viewallcustomers">View All Customers</a>
+            </ul>
+        </c:when>
+        <c:otherwise>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/vieworders">Orders</a>
+                <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/customerpage">Profile</a>
+                <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/about">About</a>
+            </ul>
+            <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/loginpage">Login</a>
+            /
+            <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/registerpage">Create Account</a>
+            <a href="${pageContext.request.contextPath}/fc/customerpage"><img src="${pageContext.request.contextPath}/images/profile-icon.png" width="40" class="profile-icon"></a>
+            <a href="${pageContext.request.contextPath}/fc/yourcart"><img src="${pageContext.request.contextPath}/images/basket-icon.png" width="40" class="basket-icon"></a>
+        </c:otherwise>
+    </c:choose>
+
+
+
 
     <div>
 
@@ -69,14 +99,9 @@
                 <a type="button" class="btn btn-sm  btn-outline-secondary"
                 href="${pageContext.request.contextPath}/fc/logoutcommand">Logout</a>
             </c:if>
-            <c:if test="${sessionScope.user == null }">
-                <a type="button" class="btn btn-sm  btn-outline-secondary"
-                   href="${pageContext.request.contextPath}/fc/loginpage">Login</a>
-                <a type="button" class="btn btn-sm  btn-outline-secondary"
-                   href="${pageContext.request.contextPath}/fc/registerpage">Sign up</a>
-            </c:if>
+        </c:if>
     </div>
-    </c:if>
+
 </header>
 
 

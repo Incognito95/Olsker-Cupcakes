@@ -13,7 +13,7 @@
 
 
 
-        <main class="form-signin">
+        <main class="form-signup">
 
             <h1 class="text-center fw-bold">Sign Up</h1>
 
@@ -25,7 +25,7 @@
 
                 <button class="w-100 btn btn-lg mt-3 btn-login text-white" type="submit">Sign Up</button>
 
-                <p class="link-secondary mt-3 text-center">Already have an account? <a href="#" class="mt-3 text-dark fw-bold" style="text-decoration: none;">Sign In</a></p>
+                <p class="link-secondary mt-3 text-center">Already have an account? <a href="${pageContext.request.contextPath}/fc/loginpage" class="mt-3 text-dark fw-bold" style="text-decoration: none;">Sign In</a></p>
 
             </form>
 

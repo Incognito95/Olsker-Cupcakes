@@ -59,27 +59,29 @@ public class UserMapper {
         }
     }
 
-    public User updateSettings(User user) throws UserException {
+    public User updateSettings(String email, String password) throws UserException {
         try (Connection connection = database.connect()) {
-            String sql = "UPDATE users SET user_email = ?, user_password = ?, user_role = ?, user_credit = ? WHERE user_id = ?";
+            String sql = "UPDATE users SET user_email = ?, user_password = ?, user_role = ? WHERE user_id = ?";
 
-            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-                ps.setString(1, user.getEmail());
-                ps.setString(2, user.getPassword());
-                ps.setString(3, user.getRole());
-                ps.setString(4, user.getCredit());
-                ps.executeUpdate();
-                ResultSet ids = ps.getGeneratedKeys();
-                ids.next();
-                int id = ids.getInt(1);
-                user.setId(id);
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ps.setString(1, email);
+                ps.setString(2, password);
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()) {
+                    String role = rs.getString("user_role");
+                    int id = rs.getInt("user_id");
+                    User user = new User(email, password, role);
+                    user.setId(id);
+                    return user;
+                } else {
+                    throw new UserException("Could not validate user");
+                }
             } catch (SQLException ex) {
                 throw new UserException(ex.getMessage());
             }
         } catch (SQLException ex) {
-            throw new UserException(ex.getMessage());
+            throw new UserException("Connection to database could not be established");
         }
-        return user;
     }
 
 
