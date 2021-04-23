@@ -22,11 +22,11 @@ public class CupcakeFacade
 
     public List<Toppings> getAllToppings() throws UserException
     {
-        return null;
+        return getAllToppings();
     }
     public List<Bottoms> getAllBottoms() throws UserException
     {
-        return null;
+        return getAllBottoms();
     }
 
 

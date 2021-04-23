@@ -21,7 +21,7 @@
             <th>Name</th>
             <th>Price</th>
             </thead>
-            <c:forEach var="bottoms" items="${applicationScope.bottoms} ${applicationScope.toppings}">
+            <c:forEach var="bottoms" items="${sessionScope.}">
 
             </c:forEach>
         </table>
