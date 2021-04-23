@@ -47,6 +47,7 @@ public class SettingsCommand extends CommandProtectedPage
             request.setAttribute("success", "Your profile settings are changed!");
             return "settings";
         }
+        return null;
     }
          return null;
     }

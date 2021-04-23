@@ -83,6 +83,14 @@
 
 
 
+    <nav class="my-2 my-md-0 me-md-3">
+        <a class="p-2 text-dark" href="#">Orders</a>
+        <a class="p-2 text-dark" href="#">Profile</a>
+        <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/about">About</a>
+        <a class="p-2 text-dark" href="#">Login</a>
+        /
+        <a class="p-2 text-dark" href="#">Create Account</a>
+    </nav>
 
     <div>
 
