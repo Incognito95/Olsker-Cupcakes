@@ -14,19 +14,19 @@
         Lav din Cupcake og vælg:
 
         <div class="d-flex justify-content-center mt-2">
-                <select class="form-select " aria-label="Default select example">
-                    <option selected>Select your bottom</option>
-        <c:forEach var="bottoms" items="${applicationScope.bottoms}">
-            <option value="1" name="order">Name: ${bottoms.name} Price: ${bottoms.price}</option>
-        </c:forEach>
-                </select>
+            <select class="form-select " aria-label="Default select example">
+                <option selected>Select your bottom</option>
+                <c:forEach var="bottoms" items="${applicationScope.bottoms}">
+                    <option value="1" name="order">${bottoms.name} (Price: ${bottoms.price})</option>
+                </c:forEach>
+            </select>
 
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Select your toppings</option>
-            <c:forEach var="toppings" items="${applicationScope.toppings}">
-                <option value="1" name="orders">Name: ${toppings.name} Price: ${toppings.price}</option>
-            </c:forEach>
-        </select>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Select your toppings</option>
+                <c:forEach var="toppings" items="${applicationScope.toppings}">
+                    <option value="1" name="orders">${toppings.name} (Price: ${toppings.price})</option>
+                </c:forEach>
+            </select>
         </div>
 
         <div class="d-flex justify-content-center mt-5">

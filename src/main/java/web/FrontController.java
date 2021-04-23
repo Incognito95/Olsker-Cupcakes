@@ -1,14 +1,18 @@
 package web;
 
+import business.entities.Bottoms;
+import business.entities.Toppings;
 import business.exceptions.UserException;
 import business.persistence.BottomMapper;
 import business.persistence.Database;
 import business.persistence.ToppingMapper;
+import business.services.CupcakeFacade;
 import web.commands.*;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -21,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 public class FrontController extends HttpServlet
 {
     private final static String USER = "root";
-    private final static String PASSWORD = "root1995";
+    private final static String PASSWORD = "Qqnfyeiy1997";
     private final static String URL = "jdbc:mysql://localhost:3306/cupcake?serverTimezone=CET";
 
     public static Database database;
@@ -39,6 +43,16 @@ public class FrontController extends HttpServlet
             {
                 Logger.getLogger("web").log(Level.SEVERE, ex.getMessage(), ex);
             }
+        }
+        CupcakeFacade cupcakeFacade = new CupcakeFacade(database);
+        try {
+            List<Toppings> toppingsList = cupcakeFacade.getAllToppings();
+            getServletContext().setAttribute("toppingsList", toppingsList);
+            List<Bottoms> bottomsList = cupcakeFacade.getAllBottoms();
+            getServletContext().setAttribute("bottomsList", bottomsList);
+
+        } catch (UserException e) {
+            e.printStackTrace();
         }
 
         // Initialize whatever global datastructures needed here:
