@@ -121,14 +121,17 @@
 <div class="container">
     <br>
     <hr>
-    <br>
     <jsp:invoke fragment="footer"/>
 </div>
 
 
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
+    <footer class="footer text-center mt-auto bg-light">
+        <div class="container d-flex text-center justify-content-center mt-1">
+            <a href="${pageContext.request.contextPath}/fc/about"  type="button" class="text-center muted btn btn-light btn-lg">About</a>
+            <br>
+            <a href="${pageContext.request.contextPath}/fc/about" type="button" class="text-center muted btn btn-light btn-lg ms-5">FAQ</a>
+            <br>
+            <a href="${pageContext.request.contextPath}/fc/about" type="button" class="text-center muted btn btn-light btn-lg ms-5">Contact info</a>
         </div>
     </footer>
 
