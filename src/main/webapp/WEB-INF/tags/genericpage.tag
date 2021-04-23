@@ -35,16 +35,16 @@
             <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="${pageContext.request.contextPath}/images/burger-icon.png">
             </button>
-
-            <c:choose>
-                <c:when test="${sessionScope.user != null }">
+                <c:choose>
+                <c:when test="${sessionScope.role == 'employee' }">
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/customerpage">Profile</a></li>
                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/viewallorders">View All Orders</a></li>
                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/placeorder">View All Customers</a></li>
                 </ul>
                 </c:when>
-                <c:otherwise>
+
+                <c:when test="${sessionScope.role == 'customer' }">
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/customerpage">Profile</a></li>
                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/viewallorders">View Orders</a></li>
@@ -52,8 +52,16 @@
                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/settings">Change Data</a></li>
                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/about">FAQ</a></li>
                 </ul>
-                </c:otherwise>
-            </c:choose>
+            </c:when>
+                    <c:otherwise>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+                          <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/about">FAQ</a></li>
+                        </ul>
+
+                    </c:otherwise>
+                </c:choose>
+
         </div>
         <!-- dropdown ending -->
 

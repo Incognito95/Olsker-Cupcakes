@@ -29,11 +29,10 @@ public class UserFacade
         return user;
     }
 
-    public User updateSettings(String email, String password) throws UserException
+    public User updateSettings(String email, String password, User oldUser) throws UserException
     {
-        User user = new User(email, password, "employee");
-        userMapper.updateSettings(email, password);
-        return user;
+        return userMapper.updateSettings(email, password, oldUser);
+
     }
     public Orders addToCart(String name, int quantity, int sub_total, int id) throws UserException
     {
