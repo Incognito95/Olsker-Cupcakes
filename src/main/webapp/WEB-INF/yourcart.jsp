@@ -14,18 +14,31 @@
 
     <jsp:body>
 
-        <h3 class="mt-3">Your Cart:</h3>
         <table class="table table-striped">
-            <thead>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Price</th>
-            </thead>
-            <c:forEach var="bottoms" items="${sessionScope.}">
+            <tead>
+                <tr>
+                    <td>Antal</td>
+                    <td>Topping</td>
+                    <td>Bottom</td>
+                    <td>Pris</td>
+                </tr>
+            </tead>
 
+            <c:forEach var="basketItem" items="${sessionScope.basket.basketItemList}">
+                <tr>
+                    <td>${basketItem.quantity}</td>
+                    <td>${basketItem.toppings.name}</td>
+                    <td>${basketItem.bottoms.name}</td>
+                    <td>${basketItem.price}</td>
+                </tr>
             </c:forEach>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Pris i alt</td>
+                <td>${sessionScope.basket.totalSum()}</td>
+            </tr>
         </table>
-
         <div class="d-flex justify-content-center mt-5">
             <br>
             <a href="checkout" type="button" class="btn btn-success btn-lg">Procced</a>

@@ -17,14 +17,14 @@
             <select class="form-select " aria-label="Default select example">
                 <option selected>Select your bottom</option>
                 <c:forEach var="bottoms" items="${applicationScope.bottoms}">
-                    <option value="1" name="order">${bottoms.name} (Price: ${bottoms.price})</option>
+                    <option value="1" name="bottoms">${bottoms.bottom_id} ${bottoms.name} (Price: ${bottoms.price})</option>
                 </c:forEach>
             </select>
 
             <select class="form-select" aria-label="Default select example">
                 <option selected>Select your toppings</option>
                 <c:forEach var="toppings" items="${applicationScope.toppings}">
-                    <option value="1" name="orders">${toppings.name} (Price: ${toppings.price})</option>
+                    <option value="1" name="toppings">${toppings.topping_id} ${toppings.name} (Price: ${toppings.price})</option>
                 </c:forEach>
             </select>
         </div>
