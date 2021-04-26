@@ -2,6 +2,7 @@ package web;
 
 import business.exceptions.UserException;
 import business.persistence.BottomMapper;
+import business.persistence.CustomersMapper;
 import business.persistence.Database;
 import business.persistence.ToppingMapper;
 import web.commands.*;
@@ -21,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class FrontController extends HttpServlet
 {
     private final static String USER = "root";
-    private final static String PASSWORD = "";
+    private final static String PASSWORD = "root1995";
     private final static String URL = "jdbc:mysql://localhost:3306/cupcake?serverTimezone=CET";
 
     public static Database database;
@@ -55,6 +56,15 @@ public class FrontController extends HttpServlet
         ToppingMapper toppingMapper = new ToppingMapper(database);
         try {
             getServletContext().setAttribute("toppings", toppingMapper.showToppings());
+        } catch (UserException e) {
+            e.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        CustomersMapper customersMapper = new CustomersMapper(database);
+        try {
+            getServletContext().setAttribute("customers", customersMapper.showCustomers());
         } catch (UserException e) {
             e.printStackTrace();
         } catch (SQLException throwables) {
