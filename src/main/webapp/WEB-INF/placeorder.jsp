@@ -13,28 +13,32 @@
     <jsp:body>
         Lav din Cupcake og vælg:
 
+        <form action="${pageContext.request.contextPath}/fc/yourcart" method="post">
+
         <div class="d-flex justify-content-center mt-2">
-            <select class="form-select " aria-label="Default select example">
+            <select name="bottom" class="form-select" aria-label="Default select example">
                 <option selected>Select your bottom</option>
                 <c:forEach var="bottoms" items="${applicationScope.bottoms}">
-                    <option value="1" name="bottoms">${bottoms.bottom_id} ${bottoms.name} (Price: ${bottoms.price})</option>
+                    <option value="${bottoms.bottom_id}" name="bottoms">${bottoms.bottom_id} ${bottoms.name} (Price: ${bottoms.price})</option>
                 </c:forEach>
             </select>
 
-            <select class="form-select" aria-label="Default select example">
+            <select name="topping" class="form-select" aria-label="Default select example">
                 <option selected>Select your toppings</option>
                 <c:forEach var="toppings" items="${applicationScope.toppings}">
-                    <option value="1" name="toppings">${toppings.topping_id} ${toppings.name} (Price: ${toppings.price})</option>
+                    <option value="${toppings.topping_id}" name="toppings">${toppings.topping_id} ${toppings.name} (Price: ${toppings.price})</option>
                 </c:forEach>
             </select>
         </div>
 
         <div class="d-flex justify-content-center mt-5">
         <br>
-        <a href="" type="button" class="btn btn-primary btn-lg">Add to basket</a>
+        <button type="submit" name="add" class="btn btn-primary btn-lg">Add to basket</button>
         <br>
         <a href="checkout" type="button" class="btn btn-success btn-lg ms-5">Go to payment</a>
         </div>
+
+        </form>
 
         <div class="d-flex justify-content-center mt-5">
         <br>

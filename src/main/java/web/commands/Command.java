@@ -34,7 +34,7 @@ public abstract class Command {
         commands.put("viewallorders", new CommandProtectedPage("viewallorders", "employee"));
         commands.put("viewallcustomers", new CommandProtectedPage("viewallcustomers", "employee"));
         commands.put("orderconfirmation", new OrderConfirmation("orderconfirmation", "customer"));
-        commands.put("checkout", new YourCartCommand("checkout", "customer"));
+      //  commands.put("checkout", new CheckoutCommand("orderconfirmation", "customer"));
         commands.put("vieworders", new CommandProtectedPage("vieworders", "customer"));
         commands.put("about", new AboutCommand("about"));
     }

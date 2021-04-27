@@ -29,13 +29,13 @@ public class YourCartCommand extends CommandUnprotectedPage
         try {
             topping_id = Integer.parseInt(request.getParameter("topping"));
             bottom_id = Integer.parseInt(request.getParameter("bottom"));
-            quantity = Integer.parseInt(request.getParameter("quantity"));
+            quantity = 1; // Integer.parseInt(request.getParameter("quantity"));
         } catch (NumberFormatException ex)
         {
             throw new UserException("Fejl i indtastning på forsiden");
         }
-        List<Toppings> toppingsList = (List<Toppings>) request.getServletContext().getAttribute("toppingList");
-        List<Bottoms> bottomsList = (List<Bottoms>) request.getServletContext().getAttribute("bottomsList");
+        List<Toppings> toppingsList = (List<Toppings>) request.getServletContext().getAttribute("toppings");
+        List<Bottoms> bottomsList = (List<Bottoms>) request.getServletContext().getAttribute("bottoms");
 
         HttpSession session = request.getSession();
 
