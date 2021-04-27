@@ -22,25 +22,17 @@
             <th>user_role</th>
             <th>user_credit</th>
             </thead>
-            <c:forEach var="users" items="${applicationScope.users}">
+            <c:forEach var="customers" items="${requestScope.customers}">
                 <tr>
-                    <td>${users.user_id}</td>
-                    <td>${users.user_email}</td>
-                    <td>${users.user_password}</td>
-                    <td>${users.user_role}</td>
-                    <td>${users.user_credit}</td>
+                    <td>${customers.user_id}</td>
+                    <td>${customers.email}</td>
+                    <td>${customers.password}</td>
+                    <td>${customers.role}</td>
+                    <td>${customers.credit}</td>
                 </tr>
             </c:forEach>
         </table>
 
-
-        <div class="d-flex justify-content-center mt-5">
-            <br>
-            <a href="viewallcustomers" type="button" class="btn btn-primary btn-lg">edit</a>
-            <br>
-            <a href="viewallcustomers" type="button" class="btn btn-primary btn-lg ms-5">insert credit</a>
-            <br>
-        </div>
 
         <div class="d-flex justify-content-center mt-5">
             <br>

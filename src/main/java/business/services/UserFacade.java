@@ -1,9 +1,12 @@
 package business.services;
 
 import business.entities.User;
+import business.persistence.CustomersMapper;
 import business.persistence.Database;
 import business.persistence.UserMapper;
 import business.exceptions.UserException;
+
+import javax.persistence.criteria.Order;
 
 public class UserFacade
 {

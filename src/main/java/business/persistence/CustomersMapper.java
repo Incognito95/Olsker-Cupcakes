@@ -19,7 +19,7 @@ public class CustomersMapper {
         this.database = database;
     }
 
-    public List<Customers> showCustomers() throws UserException, SQLException {
+    public List<Customers> showCustomers() throws UserException {
         List<Customers> customers = new ArrayList<>();
         try (Connection connection = database.connect()) {
             String sql = "SELECT * FROM users";
