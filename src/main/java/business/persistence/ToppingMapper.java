@@ -1,6 +1,5 @@
 package business.persistence;
 
-import business.entities.Bottoms;
 import business.entities.Toppings;
 import business.exceptions.UserException;
 

@@ -18,7 +18,6 @@ public class BottomMapper {
         this.database = database;
     }
 
-
     public List<Bottoms> showBottoms() throws UserException, SQLException {
         List<Bottoms> bottoms = new ArrayList<>();
         try (Connection connection = database.connect()) {

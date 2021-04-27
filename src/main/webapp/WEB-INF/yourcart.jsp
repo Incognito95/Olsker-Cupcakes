@@ -39,12 +39,16 @@
                 <td>${sessionScope.basket.totalSum()}</td>
             </tr>
         </table>
+
+        <form action="${pageContext.request.contextPath}/fc/checkout">
+
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="checkout" type="button" class="btn btn-success btn-lg">Procced</a>
+            <button type="submit" class="btn btn-success btn-lg">Procced</button>
             <br>
             <a href="editcart" type="button" class="btn btn-danger btn-lg ms-5">Edit</a>
         </div>
+        </form>
 
         <div class="d-flex justify-content-center mt-5">
             <br>
