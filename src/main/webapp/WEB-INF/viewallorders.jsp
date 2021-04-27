@@ -34,8 +34,6 @@
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="viewallorders" type="button" class="btn btn-primary btn-lg">edit</a>
-            <br>
             <a href="employeepage" type="button" class="btn btn-primary btn-lg ms-5">back</a>
             <br>
         </div>

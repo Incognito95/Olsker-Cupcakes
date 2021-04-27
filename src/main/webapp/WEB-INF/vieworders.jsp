@@ -34,8 +34,6 @@
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="vieworders" type="button" class="btn btn-primary btn-lg">edit</a>
-            <br>
             <a href="customerpage" type="button" class="btn btn-primary btn-lg ms-5">back</a>
             <br>
         </div>

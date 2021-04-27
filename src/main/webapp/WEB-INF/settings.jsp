@@ -41,28 +41,3 @@
 
     </jsp:body>
 </t:genericpage>
-
-
-<%
-        try {
-            // create a java mysql database connection
-            String myDriver = "com.mysql.jdbc.Driver";
-            String myUrl = "jdbc:mysql://localhost:3306/cupcake?serverTimezone=CET";
-            Class.forName(myDriver);
-            Connection conn = DriverManager.getConnection(myUrl, "root", "root1995");
-
-            // create the java mysql update preparedstatement
-            String query = "UPDATE users SET user_email = ?, user_password = ? WHERE user_id = ?";
-            PreparedStatement preparedStmt = conn.prepareStatement(query);
-            preparedStmt.setString(1, request.getParameter("user_email"));
-            preparedStmt.setString(2, request.getParameter("user_password"));
-
-            // execute the java preparedstatement
-            preparedStmt.executeUpdate();
-
-            conn.close();
-        } catch (Exception e) {
-            e.getMessage();
-        }
-
-%>

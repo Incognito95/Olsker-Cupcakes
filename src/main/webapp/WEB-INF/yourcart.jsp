@@ -45,8 +45,6 @@
         <div class="d-flex justify-content-center mt-5">
             <br>
             <button type="submit" class="btn btn-success btn-lg">Procced</button>
-            <br>
-            <a href="editcart" type="button" class="btn btn-danger btn-lg ms-5">Edit</a>
         </div>
         </form>
 
