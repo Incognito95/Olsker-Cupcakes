@@ -40,7 +40,7 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/customerpage">Profile</a></li>
                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/viewallorders">View All Orders</a></li>
-                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/placeorder">View All Customers</a></li>
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fc/viewallcustomers">View All Customers</a></li>
                 </ul>
                 </c:when>
 

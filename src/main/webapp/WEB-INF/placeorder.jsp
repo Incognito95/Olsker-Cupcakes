@@ -34,18 +34,12 @@
         <div class="d-flex justify-content-center mt-5">
         <br>
         <button type="submit" name="add" class="btn btn-primary btn-lg">Add to basket</button>
-        <br>
-        <a href="checkout" type="button" class="btn btn-success btn-lg ms-5">Go to payment</a>
+            <br>
+            <a href="customerpage" type="button" class="btn btn-danger btn-lg ms-5">Cancel</a>
         </div>
 
         </form>
 
-        <div class="d-flex justify-content-center mt-5">
-        <br>
-        <a href="yourcart" type="button" class="btn btn-primary btn-lg">Go to basket</a>
-        <br>
-        <a href="customerpage" type="button" class="btn btn-danger btn-lg ms-5">Cancel</a>
-        </div>
 
 
 
