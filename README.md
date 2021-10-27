@@ -6,7 +6,7 @@
 <img src="documents/design/Entry webpage.png">
 <img src="documents/design/FAQ-1.png">
 <img src="documents/design/Login.png">
-<img src="documents/design/Main webpage-1.png">
+<img src="documents/design/Main webpage - 1.png">
 <img src="documents/design/Order Error.png">
 <img src="documents/design/Order confirmation.png">
 <img src="documents/design/Place Order-Ermin.png">
